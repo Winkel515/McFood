@@ -116,6 +116,13 @@ export default function Home() {
               imageURL="/samosas.jpg"
             />
             <FoodCard reviews={reviews} name="Ramen" imageURL="/ramen.jpg" />
+            <FoodCard reviews={reviews} name="Chips" imageURL="/chips.jpg" />
+            <FoodCard
+              reviews={reviews}
+              name="Fruitsations"
+              imageURL="/fruitsations.jpg"
+            />
+
             <FoodCard
               reviews={reviews}
               name="Juice Box"

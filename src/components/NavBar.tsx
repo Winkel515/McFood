@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import router, { useRouter } from 'next/router';
 
 function NavBar() {
+  const router = useRouter();
   const [navbar, setNavbar] = useState(false);
 
   return (
@@ -58,20 +60,36 @@ function NavBar() {
             navbar ? 'block' : 'hidden'
           }`}
         >
-          <ul className="items-end justify-evenly space-y-8 flex md:flex md:space-x-8 md:space-y-0 flex-col md:flex-row text-xl font-mono">
-            <li className={`text-white inline-block mr-6 md:mr-0`}>
+          <ul className="items-end justify-end space-y-8 flex md:flex md:space-x-8 md:space-y-0 flex-col md:flex-row text-xl font-mono">
+            <li
+              className={`text-white inline-block mr-6 md:mr-0 ${
+                router.pathname == '/' ? 'visible' : 'hidden'
+              }`}
+            >
               <div className="inline-block w-20"></div>
               <Link href="#breakfast">Breakfast</Link>
             </li>
-            <li className={`text-white inline-block mr-6 md:mr-0`}>
+            <li
+              className={`text-white inline-block mr-6 md:mr-0 ${
+                router.pathname == '/' ? 'visible' : 'hidden'
+              }`}
+            >
               <div className="inline-block w-2"></div>
               <Link href="#lunch">Lunch</Link>
             </li>
-            <li className={`text-white inline-block mr-6 md:mr-0`}>
+            <li
+              className={`text-white inline-block mr-6 md:mr-0 ${
+                router.pathname == '/' ? 'visible' : 'hidden'
+              }`}
+            >
               <div className="inline-block w-2"></div>
               <Link href="#supper">Supper</Link>
             </li>
-            <li className={`text-white inline-block mr-6 md:mr-0`}>
+            <li
+              className={`text-white inline-block mr-6 md:mr-0 ${
+                router.pathname == '/' ? 'visible' : 'hidden'
+              }`}
+            >
               <div className="inline-block w-2"></div>
               <Link href="#snacks">Snacks & Drinks</Link>
             </li>
