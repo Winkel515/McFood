@@ -9,7 +9,7 @@ function NavBar() {
     <nav className="bg-mcBlue border-mcBlue px-2 sm:px-4 py-2.5 dark:bg-mcBlue">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/" className="flex items-center">
-          <Image src="/shiba.jpeg" alt="Logo" width={50} height={50} />
+          <Image src="/mchackslogo.png" alt="Logo" width={50} height={50} />
           <div className="w-5"></div>
           <span className="text-white self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             McFoods
@@ -58,7 +58,7 @@ function NavBar() {
             navbar ? 'block' : 'hidden'
           }`}
         >
-          <ul className="items-end justify-evenly space-y-8 flex md:flex md:space-x-8 md:space-y-0 flex-col md:flex-row text-xl">
+          <ul className="items-end justify-evenly space-y-8 flex md:flex md:space-x-8 md:space-y-0 flex-col md:flex-row text-l font-mono">
             <li className={`text-white inline-block mr-6 md:mr-0`}>
               <div className="inline-block w-20"></div>
               <Link href="#breakfast">Breakfast</Link>
