@@ -12,7 +12,7 @@ type ReviewObject = {
   };
 };
 
-const apiURL = 'http://3.137.208.215/';
+const apiURL = 'https://mcfood.onrender.com/';
 
 export default function Home() {
   const dataFetchedRef = useRef(false);

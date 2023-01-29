@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const apiURL = 'http://3.137.208.215/';
+const apiURL = 'https://mcfood.onrender.com/';
 
 type ReviewObject = {
   [key: string]: {
