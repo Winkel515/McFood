@@ -126,3 +126,6 @@ export default function Home() {
     </>
   );
 }
+
+//TODO: check if Breakfast has a weird amrgin // double check logo // font size (is it too big for mobile)
+// fix curvy right top button list

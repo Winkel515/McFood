@@ -115,7 +115,6 @@ export default function Analytics({ reviewArr }: { reviewArr: Array<any> }) {
           height={100}
           className="flex-1"
         />
-        ;
       </div>
     </div>
   );
