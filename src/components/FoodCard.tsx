@@ -40,9 +40,10 @@ export default function FoodCard({
     setRating(reviews[name] ? reviews[name].rating : 0);
   }, [reviews, name]);
 
+  // todo: how to make height smaller when on mobile?
   return (
     <div
-      className={`flex flex-col bg-mcBlue rounded-lg shadow-md m-4 p-3 w-80`}
+      className={`flex flex-col bg-wrapper rounded-lg shadow-md m-4 p-3 w-80`}
     >
       <div className="flex flex-col">
         <Image
@@ -53,7 +54,9 @@ export default function FoodCard({
           height={500}
           style={{ height: '250px' }}
         />
-        <p className="flex mt-2 text-white text-xl">{name}</p>
+        <p className="flex mt-2 text-white text-xl [text-shadow:_2px_1px_0_rgb(0_0_0_/_100%)]">
+          {name}
+        </p>
         <div className="flex items-center">
           {[1, 2, 3, 4, 5].map((x) => (
             <svg

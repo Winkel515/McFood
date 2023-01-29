@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         mcBlue: '#146A9F',
         mcYellow: '#FFD028',
+        wrapper: '#4382AF',
       },
     },
   },

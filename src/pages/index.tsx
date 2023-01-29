@@ -56,10 +56,13 @@ export default function Home() {
 
       <div className="bg-gradient-to-b from-mcBlue to-white bg-fixed">
         {/* heading/title + logo */}
-        <div className="flex p-14 justify-center text-white">
-          <h1 className="flex mt-15 p-15 text-6xl font-bold [text-shadow:_5px_4px_0_rgb(255_0_0_/_100%)]">
+        <div className="flex flex-col p-14 justify-center text-white">
+          <h1 className="flex justify-center mt-15 p-15 text-6xl font-bold [text-shadow:_5px_4px_0_rgb(255_0_0_/_100%)]">
             McFoods
           </h1>
+          <p className="flex justify-center mt-2 font-mono">
+            To make the next McHacks tastier...
+          </p>
         </div>
         <div id="breakfast" className="text-2xl text-white font-bold pb-10">
           <p className="pl-5 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
@@ -111,6 +114,11 @@ export default function Home() {
               imageURL="/juice_box.jpg"
             />
             <FoodCard reviews={reviews} name="Soda" imageURL="/soda.jpg" />
+            <FoodCard
+              reviews={reviews}
+              name="Redbull"
+              imageURL="/redbull.jpg"
+            />
           </div>
         </div>
       </div>
