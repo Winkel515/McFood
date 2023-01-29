@@ -12,11 +12,17 @@ type ReviewObject = {
 };
 
 async function postRating(rating: number, food: string) {
-  axios.post(apiURL, {
-    rating,
-    food,
-    userId: localStorage.getItem('userId'),
-  });
+  axios.post(
+    apiURL,
+    {
+      rating,
+      food,
+      userId: localStorage.getItem('userId'),
+    },
+    {
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    }
+  );
 }
 
 export default function FoodCard({

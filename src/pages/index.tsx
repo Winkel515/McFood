@@ -28,7 +28,9 @@ export default function Home() {
     }
 
     const getReviews = async () => {
-      const res = await axios.get(`${apiURL}${userId}`);
+      const res = await axios.get(`${apiURL}${userId}`, {
+        headers: { 'Access-Control-Allow-Origin': '*' },
+      });
       const reviewObj: ReviewObject = {};
       for (const review of res.data) {
         reviewObj[review.food] = {
