@@ -74,6 +74,7 @@ export default function Home() {
               name="Muffin"
               imageURL="/muffins.jpeg"
             />
+            <FoodCard reviews={reviews} name="Bagel" imageURL="/bagel.jpeg" />
             <FoodCard reviews={reviews} name="Coffee" imageURL="/coffee.jpg" />
           </div>
         </div>
