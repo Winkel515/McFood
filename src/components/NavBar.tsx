@@ -12,7 +12,7 @@ function NavBar() {
           <Image src="/logo.png" alt="Logo" width={50} height={50} />
           <div className="w-5"></div>
           <span className="text-white self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            McFoods
+            OnlyFoods
           </span>
         </Link>
         <button
@@ -75,10 +75,12 @@ function NavBar() {
               <div className="inline-block w-2"></div>
               <Link href="#snacks">Snacks & Drinks</Link>
             </li>
-            {/* <li className={`text-white inline-block mr-6 md:mr-0`}>
-              <div className="inline-block w-2"></div>
-              <Link href="/Analytics">Event Analytics</Link>
-            </li> */}
+            {
+              <li className={`text-white inline-block mr-6 md:mr-0`}>
+                <div className="inline-block w-2"></div>
+                <Link href="/analysis">Analysis</Link>
+              </li>
+            }
           </ul>
         </div>
       </div>

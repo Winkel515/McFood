@@ -104,11 +104,18 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap">
             <FoodCard reviews={reviews} name="Apple" imageURL="/apple.jpg" />
+            <FoodCard reviews={reviews} name="Banana" imageURL="/banana.jpg" />
             <FoodCard
               reviews={reviews}
               name="Chewy Bars"
               imageURL="/chewy_bars.jpg"
             />
+            <FoodCard
+              reviews={reviews}
+              name="Samosas"
+              imageURL="/samosas.jpg"
+            />
+            <FoodCard reviews={reviews} name="Ramen" imageURL="/ramen.jpg" />
             <FoodCard
               reviews={reviews}
               name="Juice Box"
