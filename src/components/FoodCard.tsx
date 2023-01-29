@@ -66,9 +66,9 @@ export default function FoodCard({
                 postRating(x, name);
               }}
               aria-hidden="true"
-              className={`w-6 h-6 ${
+              className={`cursor-pointer w-6 h-6 ${
                 rating >= x ? 'text-mcYellow' : 'text-white'
-              }`}
+              } hover:text-mcYellow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 fill-current`}
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
