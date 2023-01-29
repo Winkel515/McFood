@@ -84,6 +84,11 @@ export default function Home() {
           </p>
           <div className="flex">
             <FoodCard reviews={reviews} name="Wrap" imageURL="/wrap.jpg" />
+            <FoodCard
+              reviews={reviews}
+              name="Sandwich"
+              imageURL="/sandwich.jpg"
+            />
           </div>
         </div>
         <div id="supper" className="text-3xl text-white font-bold pb-7">
