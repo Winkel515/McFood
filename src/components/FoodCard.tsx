@@ -2,6 +2,8 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const apiURL = 'http://3.137.208.215/';
+
 type ReviewObject = {
   [key: string]: {
     rating: number;
@@ -10,7 +12,7 @@ type ReviewObject = {
 };
 
 async function postRating(rating: number, food: string) {
-  axios.post('/api/reviews', {
+  axios.post(apiURL, {
     rating,
     food,
     userId: localStorage.getItem('userId'),

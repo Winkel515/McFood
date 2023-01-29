@@ -12,6 +12,8 @@ type ReviewObject = {
   };
 };
 
+const apiURL = 'http://3.137.208.215/';
+
 export default function Home() {
   const dataFetchedRef = useRef(false);
   const [reviews, setReviews] = useState({});
@@ -26,7 +28,7 @@ export default function Home() {
     }
 
     const getReviews = async () => {
-      const res = await axios.get(`/api/reviews/${userId}`);
+      const res = await axios.get(`${apiURL}${userId}`);
       const reviewObj: ReviewObject = {};
       for (const review of res.data) {
         reviewObj[review.food] = {
