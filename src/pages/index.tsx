@@ -1,16 +1,45 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import NavBar from '../components/NavBar';
 import FoodCard from '@/components/FoodCard';
 import { v4 as uuid } from 'uuid';
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import axios from 'axios';
+
+type ReviewObject = {
+  [key: string]: {
+    rating: number;
+    userId: string;
+  };
+};
+
+const apiURL = 'http://3.137.208.215/';
 
 export default function Home() {
+  const dataFetchedRef = useRef(false);
+  const [reviews, setReviews] = useState({});
+
   useEffect(() => {
-    const userId = localStorage.getItem('userId');
+    if (dataFetchedRef.current) return;
+    dataFetchedRef.current = true;
+    let userId = localStorage.getItem('userId');
     if (!userId) {
-      localStorage.setItem('userId', uuid());
+      userId = uuid();
+      localStorage.setItem('userId', userId);
     }
+
+    const getReviews = async () => {
+      const res = await axios.get(`${apiURL}${userId}`);
+      const reviewObj: ReviewObject = {};
+      for (const review of res.data) {
+        reviewObj[review.food] = {
+          rating: review.rating,
+          userId: review.userId,
+        };
+      }
+      setReviews(reviewObj);
+    };
+
+    getReviews();
   }, []);
 
   return (
@@ -35,7 +64,12 @@ export default function Home() {
             Breakfast
           </p>
           <div className="flex">
-            <FoodCard name="dog" imageURL="/shiba.jpeg" />
+            <FoodCard
+              reviews={reviews}
+              name="Muffin"
+              imageURL="/muffins.jpeg"
+            />
+            <FoodCard reviews={reviews} name="Coffee" imageURL="/coffee.jpg" />
           </div>
         </div>
         <div id="lunch" className="text-2xl text-white font-bold pb-10">
@@ -43,7 +77,7 @@ export default function Home() {
             Lunch
           </p>
           <div className="flex">
-            <FoodCard name="Wrap" imageURL="/wrap.jpg" />
+            <FoodCard reviews={reviews} name="Wrap" imageURL="/wrap.jpg" />
           </div>
         </div>
         <div id="supper" className="text-2xl text-white font-bold pb-10">
@@ -51,7 +85,11 @@ export default function Home() {
             Supper
           </p>
           <div className="flex">
-            <FoodCard name="dog" imageURL="/shiba.jpeg" />
+            <FoodCard
+              reviews={reviews}
+              name="Rice dish"
+              imageURL="/rice_dish.jpeg"
+            />
           </div>
         </div>
         <div id="snacks" className="text-2xl text-white font-bold pb-10">
@@ -59,11 +97,18 @@ export default function Home() {
             Snacks & Drink
           </p>
           <div className="flex flex-wrap">
-            <FoodCard name="Apple" imageURL="/apple.jpg" />
-            <FoodCard name="Chewy Bars" imageURL="/chewy_bars.jpg" />
-            <FoodCard name="Coffee" imageURL="/coffee.jpg" />
-            <FoodCard name="Juice Box" imageURL="/juice_box.jpg" />
-            <FoodCard name="Soda" imageURL="/soda.jpg" />
+            <FoodCard reviews={reviews} name="Apple" imageURL="/apple.jpg" />
+            <FoodCard
+              reviews={reviews}
+              name="Chewy Bars"
+              imageURL="/chewy_bars.jpg"
+            />
+            <FoodCard
+              reviews={reviews}
+              name="Juice Box"
+              imageURL="/juice_box.jpg"
+            />
+            <FoodCard reviews={reviews} name="Soda" imageURL="/soda.jpg" />
           </div>
         </div>
       </div>

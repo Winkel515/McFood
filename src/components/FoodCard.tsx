@@ -1,8 +1,15 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const apiURL = 'http://3.137.208.215/';
+
+type ReviewObject = {
+  [key: string]: {
+    rating: number;
+    userId: string;
+  };
+};
 
 async function postRating(rating: number, food: string) {
   axios.post(apiURL, {
@@ -15,17 +22,31 @@ async function postRating(rating: number, food: string) {
 export default function FoodCard({
   name,
   imageURL,
+  reviews,
 }: {
   name: string;
   imageURL: string;
+  reviews: ReviewObject;
 }) {
   const [rating, setRating] = useState(0);
+
+  useEffect(() => {
+    setRating(reviews[name] ? reviews[name].rating : 0);
+  }, [reviews, name]);
+
   return (
     <div
       className={`flex flex-col bg-mcBlue rounded-lg shadow-md m-4 p-3 w-80`}
     >
       <div className="flex flex-col">
-        <Image src={imageURL} alt="Image of food" width={500} height={500} />
+        <Image
+          className="object-cover"
+          src={imageURL}
+          alt="Image of food"
+          width={500}
+          height={500}
+          style={{ height: '250px' }}
+        />
         <p className="flex mt-2 text-white text-xl">{name}</p>
         <div className="flex items-center">
           {[1, 2, 3, 4, 5].map((x) => (

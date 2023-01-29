@@ -75,10 +75,10 @@ function NavBar() {
               <div className="inline-block w-2"></div>
               <Link href="#snacks">Snacks & Drinks</Link>
             </li>
-            <li className={`text-white inline-block mr-6 md:mr-0`}>
+            {/* <li className={`text-white inline-block mr-6 md:mr-0`}>
               <div className="inline-block w-2"></div>
               <Link href="/Analytics">Event Analytics</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
