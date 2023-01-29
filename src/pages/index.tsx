@@ -54,17 +54,17 @@ export default function Home() {
 
       <NavBar />
 
-      <div className="bg-gradient-to-b from-mcBlue to-white bg-fixed">
+      <div className="bg-gradient-to-b from-mcBlue to-white bg-fixed p-8">
         {/* heading/title + logo */}
-        <div className="flex flex-col p-14 justify-center text-white">
+        <div className="flex flex-col p-12 justify-center text-white">
           <h1 className="flex justify-center mt-15 p-15 text-6xl font-bold [text-shadow:_5px_4px_0_rgb(255_0_0_/_100%)]">
             McFoods
           </h1>
-          <p className="flex justify-center mt-2 font-mono">
+          <p className="flex text-xl justify-center text-center mt-2 font-mono">
             To make the next McHacks tastier...
           </p>
         </div>
-        <div id="breakfast" className="text-2xl text-white font-bold pb-10">
+        <div id="breakfast" className="text-3xl text-white font-bold pb-7">
           <p className="pl-5 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
             Breakfast
           </p>
@@ -77,15 +77,15 @@ export default function Home() {
             <FoodCard reviews={reviews} name="Coffee" imageURL="/coffee.jpg" />
           </div>
         </div>
-        <div id="lunch" className="text-2xl text-white font-bold pb-10">
-          <p className="pl-5 pt-3 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
+        <div id="lunch" className="text-3xl text-white font-bold pb-7">
+          <p className="pl-5 pt-2 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
             Lunch
           </p>
           <div className="flex">
             <FoodCard reviews={reviews} name="Wrap" imageURL="/wrap.jpg" />
           </div>
         </div>
-        <div id="supper" className="text-2xl text-white font-bold pb-10">
+        <div id="supper" className="text-3xl text-white font-bold pb-7">
           <p className="pl-5 pt-3 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
             Supper
           </p>
@@ -97,8 +97,8 @@ export default function Home() {
             />
           </div>
         </div>
-        <div id="snacks" className="text-2xl text-white font-bold pb-10">
-          <p className="pl-5 pt-3 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
+        <div id="snacks" className="text-3xl text-white font-bold pb-7">
+          <p className="pl-5 pt-2 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
             Snacks & Drink
           </p>
           <div className="flex flex-wrap">
@@ -116,7 +116,7 @@ export default function Home() {
             <FoodCard reviews={reviews} name="Soda" imageURL="/soda.jpg" />
             <FoodCard
               reviews={reviews}
-              name="Redbull"
+              name="Red Bull"
               imageURL="/redbull.jpg"
             />
           </div>

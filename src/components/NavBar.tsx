@@ -58,7 +58,7 @@ function NavBar() {
             navbar ? 'block' : 'hidden'
           }`}
         >
-          <ul className="items-end justify-evenly space-y-8 flex md:flex md:space-x-8 md:space-y-0 flex-col md:flex-row text-l font-mono">
+          <ul className="items-end justify-evenly space-y-8 flex md:flex md:space-x-8 md:space-y-0 flex-col md:flex-row text-xl font-mono">
             <li className={`text-white inline-block mr-6 md:mr-0`}>
               <div className="inline-block w-20"></div>
               <Link href="#breakfast">Breakfast</Link>
