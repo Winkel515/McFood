@@ -65,7 +65,7 @@ export default function Home() {
           <p className="pl-5 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
             Breakfast
           </p>
-          <div className="flex">
+          <div className="flex flex-wrap">
             <FoodCard
               reviews={reviews}
               name="Muffin"
