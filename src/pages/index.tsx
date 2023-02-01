@@ -82,7 +82,7 @@ export default function Home() {
           <p className="pl-5 pt-2 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
             Lunch
           </p>
-          <div className="flex">
+          <div className="flex flex-wrap">
             <FoodCard reviews={reviews} name="Wrap" imageURL="/wrap.jpg" />
             <FoodCard
               reviews={reviews}
@@ -95,7 +95,7 @@ export default function Home() {
           <p className="pl-5 pt-3 [text-shadow:_2px_1px_0_rgb(255_0_0_/_100%)]">
             Supper
           </p>
-          <div className="flex">
+          <div className="flex flex-wrap">
             <FoodCard
               reviews={reviews}
               name="Rice dish"

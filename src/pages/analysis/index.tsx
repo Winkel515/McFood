@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import NavBar from '../components/NavBar';
+import NavBar from '../../components/NavBar';
 
 import {
   Chart as ChartJS,
@@ -61,9 +61,7 @@ export async function getServerSideProps() {
 }
 
 export default function Analytics({ reviewArr }: { reviewArr: Array<any> }) {
-  console.log(reviewArr);
-
-  const data = {
+  const dataAvg = {
     labels: reviewArr.map((x) => x.name),
     datasets: [
       {
@@ -74,10 +72,21 @@ export default function Analytics({ reviewArr }: { reviewArr: Array<any> }) {
     ],
   };
 
+  const dataCount = {
+    labels: reviewArr.map((x) => x.name),
+    datasets: [
+      {
+        label: 'Number of Reviews',
+        data: reviewArr.map((x) => x.count),
+        backgroundColor: '#FFD028AF',
+      },
+    ],
+  };
+
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col">
       <NavBar />
-      <div className="flex items-center justify-between flex-wrap bg-gradient-to-b from-mcBlue to-white bg-fixed h-full px-11">
+      <div className="flex items-center justify-between flex-wrap bg-gradient-to-b from-mcBlue to-white bg-fixed h-full px-11 py-5">
         <Bar
           options={{
             responsive: true,
@@ -111,7 +120,45 @@ export default function Analytics({ reviewArr }: { reviewArr: Array<any> }) {
               },
             },
           }}
-          data={data}
+          data={dataAvg}
+          height={100}
+          className="flex-1"
+        />
+
+        <Bar
+          options={{
+            responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  color: '#EEE',
+                  font: {
+                    size: 20,
+                  },
+                },
+              },
+            },
+            scales: {
+              x: {
+                ticks: {
+                  color: '#555',
+                  font: {
+                    size: 16,
+                  },
+                },
+              },
+              y: {
+                ticks: {
+                  color: '#555',
+                  font: {
+                    size: 16,
+                    weight: 'bold',
+                  },
+                },
+              },
+            },
+          }}
+          data={dataCount}
           height={100}
           className="flex-1"
         />

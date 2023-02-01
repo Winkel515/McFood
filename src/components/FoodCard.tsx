@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 const apiURL = 'https://mcfood.onrender.com/';
 
@@ -46,16 +47,18 @@ export default function FoodCard({
       className={`flex flex-col bg-wrapper rounded-lg shadow-md m-4 p-3 w-80`}
     >
       <div className="flex flex-col">
-        <Image
-          className="object-cover"
-          src={imageURL}
-          alt="Image of food"
-          width={500}
-          height={500}
-          style={{ height: '250px' }}
-        />
+        <Link href={`/analysis/${name}`}>
+          <Image
+            className="object-cover"
+            src={imageURL}
+            alt="Image of food"
+            width={500}
+            height={500}
+            style={{ height: '250px' }}
+          />
+        </Link>
         <p className="flex mt-2 text-white text-xl [text-shadow:_2px_1px_0_rgb(0_0_0_/_100%)]">
-          {name}
+          <Link href={`/analysis/${name}`}>{name}</Link>
         </p>
         <div className="flex items-center">
           {[1, 2, 3, 4, 5].map((x) => (

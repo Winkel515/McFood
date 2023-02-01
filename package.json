@@ -26,6 +26,8 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/chart.js": "^2.9.37",
     "@types/uuid": "^9.0.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
